@@ -10,7 +10,7 @@ PASS_M05="M05-suid-8a4d"
 for i in $(seq -w 1 20); do
     useradd -M -s /usr/sbin/nologin "st${i}" 2>/dev/null || true
 done
-REAL_COUNT=$(cut -d: -f1 /etc/passwd | grep -c '^st')
+REAL_COUNT=$(cut -d: -f1 /etc/passwd | grep -c '^st')  
 
 mkdir -p "/home/m04/garnizoana/${REAL_COUNT}"
 echo "$PASS_M05" > "/home/m04/garnizoana/${REAL_COUNT}/cod.txt"
