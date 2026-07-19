@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# MISIUNEA 14 - "Punctul de control comun"
+# Concept SO: /proc/pid/environ, environment al unui proces propriu
+
+set -e
+cp /opt/levels/m14/launch-helper.sh /home/m14/launch-helper.sh
+chown m14:m14 /home/m14/launch-helper.sh
+chmod 700 /home/m14/launch-helper.sh
+
+cat >> /home/m14/.bashrc << 'EOF'
+echo ""
+echo "=== MISIUNEA 14 - Punctul de control comun ==="
+echo "Ruleaza ~/launch-helper.sh - acesta lanseaza un proces auxiliar"
+echo "cu parametri de configurare setati in mediul lui de executie."
+echo "Inspecteaza acel proces prin /proc, ca sa vezi ce parametri a primit."
+echo ""
+EOF
+
+echo "[M14] Parola pentru m15: M15-relay-3a9f (in /proc/<pid>/environ dupa launch-helper.sh)" >> /opt/solutions/passwords.txt
